@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>중학교 1학년 수학 교과서 체제안_01 대푯값</title>
+<style>
+  :root{
+    --bg:#f6f7f9;
+    --paper:#ffffff;
+    --line:#d9dde3;
+    --text:#1f2937;
+    --muted:#6b7280;
+    --heading:#111827;
+    --accent:#1f4b99;
+    --accent-soft:#eef4ff;
+    --accent-2:#0f766e;
+    --accent-2-soft:#ecfdf5;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.65;
+  }
+  .wrap{
+    max-width:1200px;
+    margin:0 auto;
+    padding:40px 24px 80px;
+  }
+  .cover{
+    background:linear-gradient(135deg,#ffffff 0%, #f7faff 100%);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:36px 40px;
+    box-shadow:0 10px 30px rgba(17,24,39,.05);
+    margin-bottom:28px;
+  }
+  .eyebrow{
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.08em;
+    color:var(--accent);
+    text-transform:uppercase;
+  }
+  h1{
+    margin:10px 0 8px;
+    font-size:34px;
+    line-height:1.25;
+    color:var(--heading);
+  }
+  .subtitle{
+    margin:0;
+    color:var(--muted);
+    font-size:15px;
+  }
+  .note{
+    margin-top:18px;
+    padding:14px 16px;
+    background:#f9fafb;
+    border:1px solid var(--line);
+    border-radius:12px;
+    font-size:14px;
+  }
+  section{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:28px 30px;
+    margin-bottom:22px;
+    box-shadow:0 6px 18px rgba(17,24,39,.04);
+  }
+  h2{
+    margin:0 0 18px;
+    font-size:24px;
+    line-height:1.35;
+    color:var(--heading);
+    border-bottom:2px solid #edf2f7;
+    padding-bottom:12px;
+  }
+  h3{
+    margin:22px 0 12px;
+    font-size:19px;
+    color:var(--heading);
+  }
+  h4{
+    margin:18px 0 8px;
+    font-size:16px;
+    color:var(--heading);
+  }
+  p{margin:8px 0 0}
+  ul{
+    margin:8px 0 0 18px;
+    padding:0;
+  }
+  li{margin:5px 0}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:14px;
+    font-size:14px;
+  }
+  th, td{
+    border:1px solid var(--line);
+    padding:10px 12px;
+    vertical-align:top;
+    text-align:left;
+  }
+  th{
+    background:#f8fafc;
+    color:#111827;
+    font-weight:700;
+  }
+  .small{font-size:13px;color:var(--muted)}
+  .badge{
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:999px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:12px;
+    font-weight:700;
+    margin-right:6px;
+  }
+  .badge.alt{
+    background:var(--accent-2-soft);
+    color:var(--accent-2);
+  }
+  .grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .card{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 18px;
+    background:#fff;
+  }
+  .page{
+    margin-top:18px;
+    border-top:1px solid #e5e7eb;
+    padding-top:18px;
+  }
+  .page:first-of-type{
+    margin-top:0;
+    padding-top:0;
+    border-top:none;
+  }
+  .page-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+  }
+  .page-title h3{
+    margin:0;
+  }
+  .tag{
+    display:inline-block;
+    min-width:64px;
+    text-align:center;
+    padding:5px 10px;
+    border-radius:10px;
+    background:#111827;
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+  }
+  .definition{
+    background:#f8fbff;
+    border-left:4px solid var(--accent);
+    padding:12px 14px;
+    border-radius:10px;
+    margin-top:10px;
+  }
+  .two-col-list{
+    columns:2;
+    column-gap:28px;
+    margin-top:8px;
+  }
+  .problem{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:14px 16px;
+    margin-top:12px;
+    background:#fcfcfd;
+  }
+  .footer{
+    color:var(--muted);
+    font-size:12px;
+    text-align:center;
+    margin-top:14px;
+  }
+  @media (max-width: 900px){
+    .grid-2{grid-template-columns:1fr}
+    .two-col-list{columns:1}
+    .wrap{padding:20px 12px 50px}
+    section,.cover{padding:22px 18px}
+    h1{font-size:28px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="cover">
+    <div class="eyebrow">TEXTBOOK BLUEPRINT</div>
+    <h1>중학교 1학년 수학 교과서 체제안<br>Ⅶ. 자료의 정리와 해석 · 01 대푯값</h1>
+    <p class="subtitle">판형 215×280mm · 총 8쪽 구성 · 3쪽 접지면 적용(3-1, 3-2) · 실제 편집·집필·삽화·디지털 개발 공통 기준안</p>
+    <div class="note">
+      접지면은 가로 129mm × 세로 280mm로 설계한다. 3-1은 바깥면의 호기심 유발 장치, 3-2는 3쪽 본면과 연결되는 핵심 증면으로 설계한다.
+    </div>
+  </div>
+
+  <section>
+    <h2>1. 챕터 총괄 기획 의도</h2>
+    <p>이 챕터는 학생이 실생활 자료를 보고 “자료 전체를 한눈에 대표하는 값이 왜 필요한가”를 자연스럽게 이해하도록 설계한다. 도입에서는 지역별 초미세 먼지라는 생활 밀착형 자료를 강한 시각 장치로 제시하고, 접지면을 통해 호기심과 학습 몰입을 동시에 형성한다. 개념 전개는 3쪽부터 5쪽까지 변량·대푯값·평균, 중앙값, 최빈값을 각각 분리하여 한 페이지당 하나의 핵심 개념만 선명하게 학습하게 한다. 이후 6쪽과 7쪽에서는 계산 중심을 넘어 디지털 도구 활용, 판단, 비판적 해석으로 학습을 확장한다. 8쪽은 실제 교과서형 마무리 문제로 구성하여 개념 확인, 자료 해석, 적절한 대푯값 선택까지 균형 있게 점검하도록 설계한다.</p>
+  </section>
+
+  <section>
+    <h2>2. 전체 구성 개요</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>구간</th>
+          <th>페이지</th>
+          <th>핵심 역할</th>
+          <th>중심 내용</th>
+          <th>주요 장치</th>
+          <th>연결 포인트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>도비라</td>
+          <td>1,2쪽</td>
+          <td>단원 진입, 분위기 형성, 선수학습 점검</td>
+          <td>단원 비주얼, 평균 복습, 학습 계획</td>
+          <td>대형 삽화, 짧은 도입 글, 평균 확인 문제, 스스로 계획하기</td>
+          <td>“자료를 대표하는 값”에 대한 필요를 3-1 만화로 넘긴다.</td>
+        </tr>
+        <tr>
+          <td>내용 도입</td>
+          <td>3-1쪽</td>
+          <td>호기심 유발, 접지면 열람 유도</td>
+          <td>지역마다 다른 미세먼지 상황을 보여 주는 몰입형 만화</td>
+          <td>웹툰형 컷 구성, 캐릭터 대사, 질문 유도 카피</td>
+          <td>“이 차이를 한눈에 말할 수 없을까?”라는 질문으로 3-2를 펼치게 한다.</td>
+        </tr>
+        <tr>
+          <td>핵심 증면</td>
+          <td>3-2쪽</td>
+          <td>공통 자료 제시</td>
+          <td>한반도 지도 기반 지역별 초미세 먼지 농도 자료</td>
+          <td>지도 위 수치 직접 표기, 농도 수준 인포그래픽, QR</td>
+          <td>3~5쪽에서 같은 자료로 평균·중앙값·최빈값을 연속 탐구한다.</td>
+        </tr>
+        <tr>
+          <td>개념 전개 1</td>
+          <td>3쪽</td>
+          <td>개념 진입</td>
+          <td>변량, 대푯값, 평균</td>
+          <td>한 줄 정의, 계산 박스, 해석 문장, 예제</td>
+          <td>평균이 항상 적절한지 의문을 남기며 4쪽으로 이어진다.</td>
+        </tr>
+        <tr>
+          <td>개념 전개 2</td>
+          <td>4쪽</td>
+          <td>극단값 상황 이해</td>
+          <td>중앙값</td>
+          <td>크기순 배열 도식, 중앙 위치 강조, 예제</td>
+          <td>수치가 아닌 자료 또는 가장 자주 나타나는 값의 필요로 5쪽을 연다.</td>
+        </tr>
+        <tr>
+          <td>개념 전개 3</td>
+          <td>5쪽</td>
+          <td>자료 특성별 선택 경험</td>
+          <td>최빈값</td>
+          <td>빈도 강조 박스, 범주형 자료 예시, 예제</td>
+          <td>6쪽 게임 활동에서 세 개념을 종합 적용한다.</td>
+        </tr>
+        <tr>
+          <td>확장 활동 1</td>
+          <td>6쪽</td>
+          <td>디지털 기반 적용</td>
+          <td>스마트폰 협력 게임</td>
+          <td>QR, 게임 규칙, 화면 예시, 개념 확인 미니 문제</td>
+          <td>7쪽의 선택·판단형 활동으로 사고 수준을 확장한다.</td>
+        </tr>
+        <tr>
+          <td>확장 활동 2</td>
+          <td>7쪽</td>
+          <td>비판적 사고와 해석</td>
+          <td>상황별 적절한 대푯값 선택 및 이유 설명</td>
+          <td>사례 카드, 비교표, 의견 쓰기 공간</td>
+          <td>8쪽 문제에서 독립 해결이 가능하도록 판단 기준을 정리한다.</td>
+        </tr>
+        <tr>
+          <td>마무리</td>
+          <td>8쪽</td>
+          <td>학습 점검</td>
+          <td>기본 계산·자료 해석·선택·서술형 종합</td>
+          <td>2단 구성, 총 8문항, 난이도 분산</td>
+          <td>소단원 종료 후 바로 형성평가와 연계 가능하다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. 페이지별 상세 체제안</h2>
+
+    <div class="page">
+      <div class="page-title"><span class="tag">1,2쪽</span><h3>도비라</h3></div>
+      <table>
+        <tr><th style="width:22%">페이지 성격</th><td>대단원 도입과 소단원 진입을 동시에 수행하는 몰입형 도비라</td></tr>
+        <tr><th>핵심 목표</th><td>단원 분위기를 선명하게 설정하고, 평균에 대한 선수학습을 가볍게 점검하며, 생활 속 자료 해석의 필요를 예고한다.</td></tr>
+        <tr><th>메인 콘텐츠</th><td>학교를 중심으로 한 하루의 생활 장면을 대형 삽화로 구성한다. 운동장 전광판, 급식실 대기 줄, 우산을 든 학생, 스마트폰 날씨 화면, 통학길의 하늘 상태 등 여러 생활 자료 장면을 한 화면에 배치한다.</td></tr>
+        <tr><th>시각 구성</th><td>
+          <ul>
+            <li>1쪽 과측 상단에 대단원명 “Ⅶ. 자료의 정리와 해석” 고정 배치</li>
+            <li>중앙에는 1~2쪽을 가로지르는 파노라마형 학교 삽화 배치</li>
+            <li>좌하단에는 짧은 도입 글, 우하단에는 평균 확인 문제 2~3문항 소형 배치</li>
+            <li>2쪽 하단 한쪽 모서리에 “스스로 계획하기” 카드형 코너 배치</li>
+          </ul>
+        </td></tr>
+        <tr><th>텍스트 구성</th><td>
+          <div class="definition"><strong>도입 글</strong><br>우리 주변에는 날씨, 운동 기록, 선호도처럼 수많은 자료가 있다. 이 자료를 그냥 나열하면 흐름을 읽기 어렵다. 자료의 특징을 한눈에 파악하면 더 빠르고 정확하게 판단할 수 있다. 이 단원에서는 자료를 대표하는 값과 자료를 해석하는 방법을 배운다.</div>
+          <div class="problem"><strong>평균 확인 문제</strong><br>① 5일 동안 급식 잔반통에 모인 빵 개수가 4, 6, 3, 5, 7일 때 평균은 얼마인가?<br>② 4명의 통학 시간이 12분, 10분, 14분, 8분일 때 평균 통학 시간은 얼마인가?<br>③ 어느 모둠의 하루 물 마신 컵 수가 5, 7, 6, 6일 때 평균은 얼마인가?</div>
+        </td></tr>
+        <tr><th>학생 활동 요소</th><td>“이번 단원에서 내가 알고 싶은 것”, “자료를 볼 때 가장 궁금한 점”, “QR 활동 해 보기”를 체크하는 자기 계획 칸 제공</td></tr>
+        <tr><th>문제/활동 요소</th><td>평균 복습 2~3문항, 스스로 계획하기 1코너</td></tr>
+        <tr><th>QR/디지털 요소</th><td>도비라에는 QR을 크게 두지 않는다. 시각 집중을 방해하지 않도록 제외한다.</td></tr>
+        <tr><th>앞뒤 페이지와의 연결 방식</th><td>학교 장면 안에 학생들이 “오늘 지역마다 미세먼지가 다르대”라고 말하는 소형 말풍선을 삽입하여 3-1 만화의 첫 장면으로 자연스럽게 연결한다.</td></tr>
+      </table>
+    </div>
+
+    <div class="page">
+      <div class="page-title"><span class="tag">3-1쪽</span><h3>접지면 바깥면 · 내용 도입 만화</h3></div>
+      <table>
+        <tr><th style="width:22%">페이지 성격</th><td>접힌 상태에서 보이는 호기심 유발용 도입 만화</td></tr>
+        <tr><th>핵심 목표</th><td>지역마다 다른 미세먼지 상황을 생활 대화로 드러내고, 자료를 대표하는 값이 왜 필요한지 자연스럽게 궁금하게 만든다.</td></tr>
+        <tr><th>메인 콘텐츠</th><td>서로 다른 지역에 사는 친구 4명이 메신저와 영상 통화로 오늘의 미세먼지 상태를 이야기하는 웹툰형 만화</td></tr>
+        <tr><th>시각 구성</th><td>
+          <ul>
+            <li>세로형 접지면 전체를 4~5컷의 웹툰식 연속 장면으로 구성</li>
+            <li>상단 컷: “여기는 하늘이 뿌옇다”, “우리 동네는 괜찮은데?” 같은 상반된 반응 제시</li>
+            <li>중단 컷: 서로 지역을 말하며 값이 다름을 알게 되는 장면</li>
+            <li>하단 컷: “그럼 오늘 우리나라 전체는 어떤 편이라고 말해야 하지?”라는 질문 제시</li>
+            <li>마지막 컷 끝에 “펼쳐서 확인” 시각 장치 삽입</li>
+          </ul>
+        </td></tr>
+        <tr><th>텍스트 구성</th><td>
+          <ul>
+            <li>설명문 없이 대사 중심으로 구성</li>
+            <li>예시 대사: “서울은 뿌연데 제주 사진은 맑네.” / “울산은 숫자가 높다던데.” / “지역마다 다른데 오늘 미세먼지를 한마디로 어떻게 말하지?”</li>
+            <li>대푯값이라는 용어는 직접 정의하지 않는다. 필요만 제시한다.</li>
+          </ul>
+        </td></tr>
+        <tr><th>학생 활동 요소</th><td>마지막 컷 하단에 “나라 전체를 대표하는 값을 떠올려 보자.” 한 줄 질문 삽입</td></tr>
+        <tr><th>문제/활동 요소</th><td>직접 문제는 두지 않는다. 만화 자체가 질문 생성 장치 역할을 하게 한다.</td></tr>
+        <tr><th>QR/디지털 요소</th><td>QR 없음. 펼침 행동 자체가 핵심 장치다.</td></tr>
+        <tr><th>앞뒤 페이지와의 연결 방식</th><td>3-1의 마지막 컷 질문이 3-2의 실제 자료 제시로 즉시 해소되도록 설계한다. 만화의 인물 색감과 말풍선 스타일을 3쪽의 소형 말풍선에도 일부 유지한다.</td></tr>
+      </table>
+    </div>
+
+    <div class="page">
+      <div class="page-title"><span class="tag">3-2쪽</span><h3>접지면 안쪽 · 공통 자료 제시</h3></div>
+      <table>
+        <tr><th style="width:22%">페이지 성격</th><td>3~5쪽 전체 개념 전개의 공통 자료를 제공하는 핵심 증면</td></tr>
+        <tr><th>핵심 목표</th><td>대한민국 지역별 초미세 먼지 자료를 한눈에 제시하여 학생이 같은 자료로 여러 대푯값을 탐구할 수 있게 한다.</td></tr>
+        <tr><th>메인 콘텐츠</th><td>대한민국 지도 위에 17개 지역명과 초미세 먼지 농도 수치를 직접 표기한 주자료, 지도 아래 미세먼지 농도 수준 인포그래픽, 하단 QR</td></tr>
+        <tr><th>시각 구성</th><td>
+          <ul>
+            <li>상단 70%: 한반도 지도 중심 배치</li>
+            <li>지도 위 표기 예시: 서울 20, 부산 26, 대구 26, 인천 21, 광주 15, 대전 12, 울산 33, 경기 18, 강원 16, 충북 16, 충남 16, 전북 15, 전남 16, 세종 13, 경북 25, 경남 26, 제주 12</li>
+            <li>하단 20%: 농도 수준 인포그래픽 띠형 배치</li>
+            <li>우하단 10%: QR과 활동 문구 배치</li>
+          </ul>
+        </td></tr>
+        <tr><th>텍스트 구성</th><td>
+          <div class="definition"><strong>자료 제목</strong><br>어느 날 우리나라 17개 지역의 초미세 먼지 농도</div>
+          <ul>
+            <li>보조 문장: “지역마다 값이 다를 때, 자료 전체의 특징을 대표하는 값은 어떻게 정할까?”</li>
+            <li>인포그래픽 문안: 아주 좋음 / 좋음 / 보통 / 나쁨 / 매우 나쁨 구간을 색 띠와 표정 아이콘으로 표시</li>
+            <li>QR 문안: “우리 위치의 오늘 대기 정보와 비교해 보기”</li>
+          </ul>
+        </td></tr>
+        <tr><th>학생 활동 요소</th><td>지도에서 가장 큰 값, 가장 작은 값, 비슷한 값이 반복되는 지역을 눈으로 찾게 하는 관찰 유도 장치 삽입</td></tr>
+        <tr><th>문제/활동 요소</th><td>직접 문제 번호는 두지 않는다. 3~5쪽 탐구의 공통 근거 자료로 기능하게 한다.</td></tr>
+        <tr><th>QR/디지털 요소</th><td>QR을 통해 위치 기반 대기 정보 페이지 또는 학습용 시뮬레이션으로 연결한다. 학생은 자신의 지역 수치와 교과서 수치를 비교하여 차이와 공통점을 본다.</td></tr>
+        <tr><th>앞뒤 페이지와의 연결 방식</th><td>3쪽에서는 이 자료의 숫자를 “변량”으로 명명하고 평균을 계산한다. 4쪽에서는 같은 수를 크기순으로 배열하여 중앙값을 찾고, 5쪽에서는 반복되는 값에 주목해 최빈값을 찾는다.</td></tr>
+      </table>
+    </div>
+
+    <div class="page">
+      <div class="page-title"><span class="tag">3쪽</span><h3>개념 전개 1 · 변량, 대푯값, 평균</h3></div>
+      <table>
+        <tr><th style="width:22%">페이지 성격</th><td>소단원 개념 진입면</td></tr>
+        <tr><th>핵심 목표</th><td>3-2의 공통 자료를 바탕으로 변량과 대푯값의 뜻을 이해하고, 평균을 계산하고 해석하게 한다.</td></tr>
+        <tr><th>메인 콘텐츠</th><td>소단원 제목, 한 줄 정의 3개, 평균 계산 과정, 해석 문장, 평균 확인 예제 1문항</td></tr>
+        <tr><th>시각 구성</th><td>
+          <ul>
+            <li>상단에 반드시 소단원 제목 “01 대푯값” 배치</li>
+            <li>좌측: 3-2 자료의 일부 수치를 다시 정렬한 숫자 띠</li>
+            <li>우측: 정의 박스와 평균 계산 박스</li>
+            <li>하단: 예제와 확인 문제 배치</li>
+          </ul>
+        </td></tr>
+        <tr><th>텍스트 구성</th><td>
+          <div class="definition"><strong>한 줄 정의</strong><br>변량: 자료를 수량으로 나타낸 각각의 값<br>대푯값: 자료 전체의 특징을 대표하는 값<br>평균: 변량의 총합을 변량의 개수로 나눈 값</div>
+          <div class="problem"><strong>자료 적용</strong><br>3-2쪽 자료의 17개 수 20, 26, 26, 21, 15, 12, 33, 18, 16, 16, 16, 15, 16, 13, 25, 26, 12는 모두 변량이다. 이 변량의 총합은 326이고, 변량의 개수는 17이므로 평균은 326÷17≈19.2이다.</div>
+          <p><strong>해석</strong> 우리나라 17개 지역의 초미세 먼지 농도를 전체적으로 볼 때, 한 지역의 농도는 평균적으로 약 19 정도라고 볼 수 있다.</p>
+          <div class="problem"><strong>예제</strong><br>다음은 어느 모둠이 조사한 5개 지역의 초미세 먼지 농도이다. 14, 18, 20, 24, 19. 평균을 구하고, 그 뜻을 한 문장으로 쓰시오.</div>
+        </td></tr>
+        <tr><th>학생 활동 요소</th><td>지도에서 본 값이 계산식의 숫자로 바뀌는 과정을 직접 따라 적도록 빈칸 2개 제공</td></tr>
+        <tr><th>문제/활동 요소</th><td>평균 확인 예제 1문항, 미니 확인 1문항</td></tr>
+        <tr><th>QR/디지털 요소</th><td>별도 QR 없음. 3-2의 QR을 재활용한다.</td></tr>
+        <tr><th>앞뒤 페이지와의 연결 방식</th><td>하단 정리 문장으로 “그런데 자료에 큰 값이나 작은 값이 섞여 있을 때 평균만으로 충분할까?”를 제시하여 4쪽 중앙값으로 넘긴다.</td></tr>
+      </table>
+    </div>
+
+    <div class="page">
+      <div class="page-title"><span class="tag">4쪽</span><h3>개념 전개 2 · 중앙값</h3></div>
+      <table>
+        <tr><th style="width:22%">페이지 성격</th><td>극단값과 자료의 중심 위치를 이해하는 전개면</td></tr>
+        <tr><th>핵심 목표</th><td>3-2 자료를 크기순으로 배열하여 중앙값의 뜻과 구하는 방법을 이해하게 한다.</td></tr>
+        <tr><th>메인 콘텐츠</th><td>중앙값 한 줄 정의, 배열 도식, 3-2 자료의 중앙값 찾기, 짝수 개수 자료 예제</td></tr>
+        <tr><th>시각 구성</th><td>
+          <ul>
+            <li>상단: 중앙값 정의 박스</li>
+            <li>중앙: 3-2 자료를 작은 값부터 늘어놓은 긴 수 띠</li>
+            <li>가운데 위치한 수를 색상으로 강조</li>
+            <li>하단: 짝수 개수 자료 예제와 확인 문제 배치</li>
+          </ul>
+        </td></tr>
+        <tr><th>텍스트 구성</th><td>
+          <div class="definition"><strong>한 줄 정의</strong><br>중앙값: 변량을 작은 값부터 크기순으로 나열했을 때 중앙에 위치하는 값</div>
+          <div class="problem"><strong>자료 적용</strong><br>3-2쪽 자료를 크기순으로 나열하면 12, 12, 13, 15, 15, 16, 16, 16, 16, 18, 20, 21, 25, 26, 26, 26, 33이다. 변량의 개수가 17개이므로 9번째 값인 16이 중앙값이다.</div>
+          <p><strong>해석</strong> 이 자료를 크기순으로 정리하면 가운데에 16이 놓인다. 따라서 중앙값 16은 극단적으로 큰 값의 영향을 덜 받으면서 자료의 가운데 수준을 보여 준다.</p>
+          <div class="problem"><strong>예제</strong><br>다음 자료의 중앙값을 구하시오. 7, 9, 12, 14, 15, 18<br>풀이 공간에는 크기순 배열과 가운데 두 수 표시 칸을 함께 둔다.</div>
+        </td></tr>
+        <tr><th>학생 활동 요소</th><td>배열 전 자료와 배열 후 자료를 비교하게 하고, “왜 먼저 크기순으로 정리해야 하는가”를 짧게 쓰게 한다.</td></tr>
+        <tr><th>문제/활동 요소</th><td>홀수 자료 1개, 짝수 자료 1개 확인 문제</td></tr>
+        <tr><th>QR/디지털 요소</th><td>선택형 미니 디지털 아이콘만 배치한다. 별도 QR은 넣지 않는다.</td></tr>
+        <tr><th>앞뒤 페이지와의 연결 방식</th><td>하단 정리에서 “가운데 값이 아니라 가장 자주 나타나는 값이 더 중요할 때도 있다.”를 제시하여 5쪽 최빈값으로 이어 준다.</td></tr>
+      </table>
+    </div>
+
+    <div class="page">
+      <div class="page-title"><span class="tag">5쪽</span><h3>개념 전개 3 · 최빈값</h3></div>
+      <table>
+        <tr><th style="width:22%">페이지 성격</th><td>빈도 중심 대표값을 이해하는 전개면</td></tr>
+        <tr><th>핵심 목표</th><td>3-2 자료에서 가장 많이 나타나는 값을 찾아 최빈값의 뜻을 이해하고, 수가 아닌 자료에서도 사용할 수 있음을 인식하게 한다.</td></tr>
+        <tr><th>메인 콘텐츠</th><td>최빈값 한 줄 정의, 3-2 자료의 빈도 정리, 최빈값 찾기, 범주형 자료 예제</td></tr>
+        <tr><th>시각 구성</th><td>
+          <ul>
+            <li>상단: 최빈값 정의 박스</li>
+            <li>중앙: 3-2 수치의 빈도 미니표</li>
+            <li>최빈값 16을 강조하는 수치 하이라이트 박스</li>
+            <li>하단: 좋아하는 마스크 색 또는 선호 교통수단 같은 범주형 자료 예제 배치</li>
+          </ul>
+        </td></tr>
+        <tr><th>텍스트 구성</th><td>
+          <div class="definition"><strong>한 줄 정의</strong><br>최빈값: 변량 중에서 가장 많이 나타나는 값</div>
+          <div class="problem"><strong>자료 적용</strong><br>3-2쪽 자료에서 12는 2번, 13은 1번, 15는 2번, 16은 4번, 18은 1번, 20은 1번, 21은 1번, 25는 1번, 26은 3번, 33은 1번 나타난다. 가장 많이 나타나는 값은 16이므로 최빈값은 16이다.</div>
+          <p><strong>해석</strong> 17개 지역 중 가장 자주 나타난 초미세 먼지 농도는 16이다. 따라서 이 자료에서 반복되는 대표 수준을 말할 때는 최빈값 16이 유용하다.</p>
+          <div class="problem"><strong>예제</strong><br>다음은 학생 9명이 가장 즐겨 마시는 음료를 조사한 자료이다. 우유, 주스, 우유, 물, 주스, 우유, 탄산음료, 물, 우유. 최빈값을 구하시오.</div>
+        </td></tr>
+        <tr><th>학생 활동 요소</th><td>“최빈값은 꼭 수가 아니어도 되는가?”에 예/아니요로 답하고 이유를 한 줄로 적게 한다.</td></tr>
+        <tr><th>문제/활동 요소</th><td>수치 자료 1문항, 범주형 자료 1문항</td></tr>
+        <tr><th>QR/디지털 요소</th><td>없음</td></tr>
+        <tr><th>앞뒤 페이지와의 연결 방식</th><td>5쪽 하단에 “상황에 따라 평균, 중앙값, 최빈값 중 무엇을 선택해야 할까?”라는 질문 박스를 두어 6~7쪽 확장 활동으로 연결한다.</td></tr>
+      </table>
+    </div>
+
+    <div class="page">
+      <div class="page-title"><span class="tag">6쪽</span><h3>확장 활동 1 · 스마트폰 기반 협력 게임</h3></div>
+      <table>
+        <tr><th style="width:22%">페이지 성격</th><td>개념 적용형 디지털 활동면</td></tr>
+        <tr><th>핵심 목표</th><td>학생이 세 가지 대푯값을 계산하는 데 그치지 않고, 상황에 맞게 적용·판단하는 경험을 하게 한다.</td></tr>
+        <tr><th>메인 콘텐츠</th><td>상단 개념 확인 미니 문제, 중앙 QR 연동 게임 활동, 규칙·플레이 흐름·화면 예시</td></tr>
+        <tr><th>시각 구성</th><td>
+          <ul>
+            <li>상단 20%: 선잇기 또는 빈칸 채우기 4문항</li>
+            <li>중앙 55%: 스마트폰 화면 예시 3컷, QR, 규칙 설명</li>
+            <li>하단 25%: 플레이 흐름, 협력 역할, 학습 효과 정리</li>
+          </ul>
+        </td></tr>
+        <tr><th>텍스트 구성</th><td>
+          <div class="problem"><strong>상단 미니 확인</strong><br>① 자료를 수량으로 나타낸 각각의 값 → (변량)<br>② 자료의 특징을 대표하는 값 → (대푯값)<br>③ 크기순으로 나열했을 때 가운데 값 → (중앙값)<br>④ 가장 많이 나타나는 값 → (최빈값)</div>
+          <div class="definition"><strong>메인 활동명</strong><br>미세먼지 대표값 탐정 게임</div>
+          <p>모둠별로 제시되는 여러 지역 자료 카드의 상황을 보고, 평균·중앙값·최빈값 중 가장 적절한 것을 선택해 미션을 해결한다.</p>
+        </td></tr>
+        <tr><th>학생 활동 요소</th><td>2~4인 역할 분담: 계산 담당, 판단 담당, 기록 담당, 발표 담당</td></tr>
+        <tr><th>문제/활동 요소</th><td>정답만 찾는 방식이 아니라 “어떤 값이 왜 적절한가”를 선택해야 다음 단계로 넘어가게 한다.</td></tr>
+        <tr><th>QR/디지털 요소</th><td>필수 QR 삽입. 모바일 페이지에는 자료 카드, 시간 제한, 정답 즉시 피드백, 모둠 점수판 기능을 넣는다.</td></tr>
+        <tr><th>앞뒤 페이지와의 연결 방식</th><td>게임 마지막 단계에서 “같은 자료라도 목적에 따라 선택이 달라질 수 있다.”를 경험하게 하여 7쪽 비판적 사고 활동으로 이어 준다.</td></tr>
+      </table>
+    </div>
+
+    <div class="page">
+      <div class="page-title"><span class="tag">7쪽</span><h3>확장 활동 2 · 비판적 사고 활동</h3></div>
+      <table>
+        <tr><th style="width:22%">페이지 성격</th><td>상황 판단과 해석 중심 활동면</td></tr>
+        <tr><th>핵심 목표</th><td>학생이 상황의 목적에 따라 적절한 대푯값을 선택하고 이유를 설명하는 비판적 사고를 기르게 한다.</td></tr>
+        <tr><th>메인 콘텐츠</th><td>사례 카드 3개, 선택 표, 이유 서술 칸, 모둠 토론 질문</td></tr>
+        <tr><th>시각 구성</th><td>
+          <ul>
+            <li>좌측: 사례 카드 3개 세로 배열</li>
+            <li>우측: “어떤 대푯값이 적절한가?” 체크표와 이유 쓰기 칸</li>
+            <li>하단: 모둠 비교 토론 박스</li>
+          </ul>
+        </td></tr>
+        <tr><th>텍스트 구성</th><td>
+          <div class="problem"><strong>사례 1</strong><br>학교 앞 편의점에서 가장 많이 준비해야 할 삼각김밥 맛을 정하려고 한다.</div>
+          <div class="problem"><strong>사례 2</strong><br>8명의 일주일 독서 시간 자료에 한 학생의 기록이 매우 크다.</div>
+          <div class="problem"><strong>사례 3</strong><br>학급 학생들의 스마트폰 화면 밝기 설정 값을 전체적으로 설명하려고 한다.</div>
+          <p>각 사례마다 평균, 중앙값, 최빈값 중 하나를 고르고 선택 이유를 한 문장 이상 쓰게 한다.</p>
+        </td></tr>
+        <tr><th>학생 활동 요소</th><td>개인 선택 후 모둠 합의, 모둠 간 선택 비교, 선택 근거 발표</td></tr>
+        <tr><th>문제/활동 요소</th><td>단순 계산 없이 선택·설명 중심 활동으로 구성한다.</td></tr>
+        <tr><th>QR/디지털 요소</th><td>선택 사항. 온라인 투표형 응답 도구와 연계 가능하나 지면에는 QR을 필수 배치하지 않는다.</td></tr>
+        <tr><th>앞뒤 페이지와의 연결 방식</th><td>7쪽 하단에 “이제 혼자 해결해 보자.” 문구를 두고 8쪽 마무리 문제로 넘어간다.</td></tr>
+      </table>
+    </div>
+
+    <div class="page">
+      <div class="page-title"><span class="tag">8쪽</span><h3>마무리 문제</h3></div>
+      <table>
+        <tr><th style="width:22%">페이지 성격</th><td>소단원 종합 점검면</td></tr>
+        <tr><th>핵심 목표</th><td>개념 이해, 계산, 자료 해석, 적절한 대푯값 선택, 이유 설명을 균형 있게 평가한다.</td></tr>
+        <tr><th>메인 콘텐츠</th><td>페이지 중앙 세로 가름선이 있는 2단 구성, 총 8문항, 서술형 2문항</td></tr>
+        <tr><th>시각 구성</th><td>문항만 배치한다. 상단 제목 외 설명문과 정답란은 두지 않는다. 필요한 표와 짧은 자료는 각 문항 안에 포함한다.</td></tr>
+        <tr><th>텍스트 구성</th><td>불필요한 장식 없이 교과서형 문항체로 통일한다.</td></tr>
+        <tr><th>학생 활동 요소</th><td>서술형 문항에는 답안 칸을 넉넉하게 제공한다.</td></tr>
+        <tr><th>문제/활동 요소</th><td>하~중상 난이도 분산, 계산·해석·선택·이유 설명 모두 포함</td></tr>
+        <tr><th>QR/디지털 요소</th><td>배치하지 않는다.</td></tr>
+        <tr><th>앞뒤 페이지와의 연결 방식</th><td>소단원 종료 후 별도 형성평가, 수행평가, 활동지와 바로 연계 가능하다.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. 6쪽 구성안 3개</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>구성안</th>
+          <th>활동명</th>
+          <th>활동 핵심 아이디어</th>
+          <th>페이지 구성 방식</th>
+          <th>학생 활동 흐름</th>
+          <th>기대 학습 효과</th>
+          <th>이 단원에 적합한 이유</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>안 1</td>
+          <td>미세먼지 대표값 탐정 게임</td>
+          <td>지역 자료 카드를 보고 적절한 대푯값을 골라 사건을 해결한다.</td>
+          <td>상단 개념 확인, 중앙 QR·게임 화면, 하단 규칙과 점수판 예시</td>
+          <td>QR 접속 → 자료 카드 확인 → 대푯값 선택 → 이유 선택 또는 입력 → 다음 단계 해금</td>
+          <td>계산과 판단을 동시에 수행하고, 모둠 협력을 경험한다.</td>
+          <td>3-2의 미세먼지 자료와 직접 연결되어 단원 흐름을 끊지 않는다.</td>
+        </tr>
+        <tr>
+          <td>안 2</td>
+          <td>대표값 배틀 라운드</td>
+          <td>평균·중앙값·최빈값 캐릭터 중 상황에 맞는 대표를 선택하는 대전형 게임</td>
+          <td>캐릭터 비주얼, 라운드별 상황 카드, QR 대전 화면</td>
+          <td>상황 확인 → 각자 답 선택 → 모둠 토론 → 최종 선택 제출 → 해설 확인</td>
+          <td>세 개념의 차이를 빠르게 구별하는 능력을 높인다.</td>
+          <td>용어 구분이 중요한 대푯값 단원에서 개념 분화 효과가 크다.</td>
+        </tr>
+        <tr>
+          <td>안 3</td>
+          <td>우리 반 데이터 구조대</td>
+          <td>극단값, 반복값, 범주형 자료가 섞인 여러 데이터를 구조하는 미션형 게임</td>
+          <td>미션 브리프, 스마트폰 화면, 역할 카드, 단계별 진행표</td>
+          <td>모둠 역할 분담 → 미션 1~3 해결 → 결과 공유 → 점수 합산</td>
+          <td>자료 특성에 따라 판단 기준이 달라짐을 체감한다.</td>
+          <td>단순 계산이 아니라 “어떤 자료에 어떤 대표값이 적절한가”를 훈련시킨다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>5. 7쪽 구성안 3개</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>구성안</th>
+          <th>활동명</th>
+          <th>활동 핵심 아이디어</th>
+          <th>페이지 구성 방식</th>
+          <th>학생 활동 흐름</th>
+          <th>기대 학습 효과</th>
+          <th>이 단원에 적합한 이유</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>안 1</td>
+          <td>어떤 값이 더 공정할까?</td>
+          <td>같은 자료를 두고 서로 다른 대푯값을 제시한 두 주장 중 무엇이 더 타당한지 판단한다.</td>
+          <td>좌우 대조형 주장 카드, 판단표, 이유 서술 칸</td>
+          <td>자료 확인 → 두 주장 비교 → 적절한 값 선택 → 이유 쓰기 → 모둠 토론</td>
+          <td>수치 해석과 논리적 설명 능력을 함께 기른다.</td>
+          <td>대푯값은 선택의 문제이므로 공정성과 타당성 판단 활동이 핵심과 맞닿아 있다.</td>
+        </tr>
+        <tr>
+          <td>안 2</td>
+          <td>뉴스 속 대표값 검토실</td>
+          <td>기사형 짧은 문장을 읽고 제시된 대표값이 적절한지 검토한다.</td>
+          <td>기사 카드 3개, 체크리스트, 수정 제안 칸</td>
+          <td>기사 읽기 → 숨은 문제 찾기 → 더 적절한 대표값 제안 → 이유 작성</td>
+          <td>현대적 문해력과 수학적 비판 읽기 능력을 기른다.</td>
+          <td>실생활 자료 해석이라는 통계 단원 성격을 강화한다.</td>
+        </tr>
+        <tr>
+          <td>안 3</td>
+          <td>데이터 컨설턴트 프로젝트</td>
+          <td>상황별 의뢰서를 보고 가장 알맞은 대푯값을 추천하는 프로젝트형 활동</td>
+          <td>의뢰서 카드, 추천서 양식, 발표용 요약칸</td>
+          <td>의뢰서 분석 → 자료 특성 분류 → 대푯값 추천 → 추천 이유 발표</td>
+          <td>개념 적용력, 의사소통, 요약 능력을 함께 키운다.</td>
+          <td>교과서의 차별화 요소로 활용 가능하며 수행평가형 확장도 쉽다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>6. 8쪽 문제 구성안</h2>
+
+    <div class="problem">
+      <strong>문항 1</strong><br>
+      <span class="badge">문항 유형</span>기본 계산
+      <span class="badge alt">난이도</span>하
+      <p><strong>문제 의도</strong> 평균 계산을 정확히 수행하는지 확인한다.</p>
+      <p><strong>문제 초안</strong> 다음 자료의 평균을 구하시오. 14, 18, 20, 17, 16</p>
+    </div>
+
+    <div class="problem">
+      <strong>문항 2</strong><br>
+      <span class="badge">문항 유형</span>개념 확인
+      <span class="badge alt">난이도</span>하
+      <p><strong>문제 의도</strong> 중앙값의 정의에 따라 자료를 정렬해 구할 수 있는지 확인한다.</p>
+      <p><strong>문제 초안</strong> 다음 자료의 중앙값을 구하시오. 9, 3, 7, 11, 5, 6, 8</p>
+    </div>
+
+    <div class="problem">
+      <strong>문항 3</strong><br>
+      <span class="badge">문항 유형</span>기본 계산
+      <span class="badge alt">난이도</span>하
+      <p><strong>문제 의도</strong> 최빈값의 뜻을 이해했는지 확인한다.</p>
+      <p><strong>문제 초안</strong> 다음 자료의 최빈값을 구하시오. 2, 5, 3, 5, 4, 5, 2, 4</p>
+    </div>
+
+    <div class="problem">
+      <strong>문항 4</strong><br>
+      <span class="badge">문항 유형</span>자료 해석
+      <span class="badge alt">난이도</span>중
+      <p><strong>문제 의도</strong> 표 자료에서 적절한 대표값을 읽고 계산하는지 확인한다.</p>
+      <p><strong>문제 초안</strong> 다음은 어느 반 학생 6명의 하루 독서 시간을 조사한 자료이다. 평균과 중앙값을 각각 구하시오.<br>18분, 22분, 20분, 19분, 45분, 20분</p>
+    </div>
+
+    <div class="problem">
+      <strong>문항 5</strong><br>
+      <span class="badge">문항 유형</span>대푯값 비교
+      <span class="badge alt">난이도</span>중
+      <p><strong>문제 의도</strong> 평균·중앙값·최빈값의 차이를 비교하게 한다.</p>
+      <p><strong>문제 초안</strong> 다음 자료 A, B의 중앙값을 각각 구하고 크기를 비교하시오.<br>A: 3, 4, 4, 7, 8, 9, 10<br>B: 2, 2, 5, 6, 6, 8, 12</p>
+    </div>
+
+    <div class="problem">
+      <strong>문항 6</strong><br>
+      <span class="badge">문항 유형</span>적절한 대푯값 선택
+      <span class="badge alt">난이도</span>중
+      <p><strong>문제 의도</strong> 범주형 자료에서 최빈값을 선택할 수 있는지 본다.</p>
+      <p><strong>문제 초안</strong> 다음은 학급 학생 10명이 가장 좋아하는 체육 활동을 조사한 자료이다. 이 자료의 대푯값으로 적절한 것을 고르고 그 값을 구하시오.<br>축구, 농구, 축구, 배드민턴, 축구, 피구, 농구, 축구, 피구, 축구</p>
+    </div>
+
+    <div class="problem">
+      <strong>문항 7</strong><br>
+      <span class="badge">문항 유형</span>서술형
+      <span class="badge alt">난이도</span>중상
+      <p><strong>문제 의도</strong> 극단값이 있는 자료에서 적절한 대표값을 선택하고 이유를 설명하게 한다.</p>
+      <p><strong>문제 초안</strong> 다음은 어느 모둠 학생 7명의 주말 운동 시간이다. 30분, 35분, 40분, 45분, 50분, 35분, 180분. 이 자료의 대푯값으로 평균, 중앙값, 최빈값 중 어느 것을 사용하는 것이 가장 적절한지 고르고, 그 이유를 쓰시오.</p>
+    </div>
+
+    <div class="problem">
+      <strong>문항 8</strong><br>
+      <span class="badge">문항 유형</span>서술형
+      <span class="badge alt">난이도</span>중상
+      <p><strong>문제 의도</strong> 상황의 목적에 따라 대푯값 선택 기준이 달라짐을 설명하게 한다.</p>
+      <p><strong>문제 초안</strong> 어느 가게에서 하루 동안 판매한 신발의 치수가 다음과 같았다.<br>240, 250, 255, 255, 260, 260, 260, 265, 270, 270<br>가게에서 다음 주에 가장 많이 준비해야 할 치수를 정하려고 할 때, 평균, 중앙값, 최빈값 중 어떤 값을 사용하는 것이 가장 적절한지 쓰고 그 이유를 설명하시오.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>7. 편집·디자인 디렉션</h2>
+    <table>
+      <tr><th style="width:26%">톤앤매너</th><td>과도하게 장식적이지 않은 고급형 교과서 톤으로 설계한다. 정보는 명확하고, 화면은 여유 있게 구성한다. 학습 요소는 정돈되되 차갑지 않게 생활 밀착형 이미지를 유지한다.</td></tr>
+      <tr><th>삽화 스타일 방향</th><td>도비라는 영화 스틸컷처럼 넓은 장면 구성이 보이는 반실사형 일러스트, 3-1 만화는 인기 웹툰 감도의 선명한 표정과 리듬감 있는 컷 연출로 구분한다.</td></tr>
+      <tr><th>인포그래픽 스타일</th><td>3-2의 미세먼지 수준 인포그래픽은 아이콘, 색 띠, 수치 기준을 함께 보여 주는 교육형 그래픽으로 설계한다. 지도 정보가 가장 먼저 읽히고, 기준표는 보조 역할을 하도록 위계를 조정한다.</td></tr>
+      <tr><th>만화 연출 방향</th><td>설명식 학습만화가 아니라 상황과 감정이 살아 있는 대화형 연출로 간다. 컷마다 정보량을 과도하게 넣지 않고, 마지막 질문이 자연스럽게 자료 탐구로 이어지게 한다.</td></tr>
+      <tr><th>컬러 운용 방향</th><td>도비라와 3-1은 공기질을 연상시키는 청회색·청록 계열을 기본으로 하고, 3-2 인포그래픽은 농도 수준 구분이 명확한 단계색을 사용한다. 3~5쪽 개념면은 한 페이지당 한 가지 대표 색을 보조색으로 사용해 개념 구분을 강화한다.</td></tr>
+      <tr><th>교과서다운 정돈감과 차별성의 균형</th><td>표, 정의 박스, 문제, 말풍선의 스타일을 통일해 정돈감을 확보한다. 차별성은 접지면, 웹툰형 도입, 미세먼지 지도, 협력형 게임 활동에서 확보한다. 장식보다 구조와 흐름에서 차별성을 만든다.</td></tr>
+      <tr><th>접지면 활용 시 유의할 점</th><td>3-1은 접힌 상태에서도 독립적으로 읽혀야 하고, 3-2는 펼쳤을 때만 드러나는 정보 확장감이 분명해야 한다. 접히는 경계에 핵심 글자나 수치를 두지 않는다. 3-1과 3-2의 배경 톤, 인물, 시선 방향을 연결해 펼침 동작 자체가 서사의 일부처럼 보이게 한다.</td></tr>
+    </table>
+    <div class="footer">End of document</div>
+  </section>
+</div>
+</body>
+</html>
